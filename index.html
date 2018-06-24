@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<!--  -->
+<head>
+    
+    <meta charset="UTF-8">
+    
+    <!--    To make website responsive-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Web Engineer Technical Test</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="json_data.json"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/json2html/1.2.0/json2html.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<body>
+
+    <!--    logo    -->
+    <header>
+        <img class="logo" src="logo-small.png">
+    </header>
+    
+    <!--    Horziontal navigation bar at top-->
+    <div id="one">
+        <ul>
+            <li><a href="#"><i class="glyphicon glyphicon-th">&ensp;Locations</i></a></li>        
+            <li><a href="#"><i class="fa fa-globe">&ensp;Categories</i></a></li>
+        </ul>
+    </div>
+    
+    <!--    Area to return number of items found after search and sort data again-->
+    <div id="search">
+        
+        <h2 style="font-family:sans-serif">Newest Contractors in Santa Clara, Ca <span style="color:#f0ad4e;font-size:16px;font-style:italic" >(16 Results)</span></h2>
+        
+    <!--        dropdown to sort results-->
+        <div class="dropdown">
+            
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="glyphicon glyphicon-sort-by-attributes" aria-hidden="true"></span>
+            &nbsp;Sort By&nbsp;<b>(Best Match)</b>&nbsp;
+            <span class="caret"></span>
+            </button>
+            
+            <ul class="dropdown-menu">
+                <li> <a href="#" onclick="f1()">Top Rated</a></li>
+                <li> <a href="#" onclick="f2()">Most Popular</a></li>
+            </ul>
+        
+        </div>
+    
+    </div>
+    
+    
+<!--    Dividing wrap in two parts to display content on Left and Right-->
+<div class="wrap">
+
+<!--Horizontal Navigation Menu-->
+    <div class="floatright">
+            <div id = "two"> 
+                
+            <ul>
+            <li><a class="active" href="#"> <img src="green-button-icon-png-13.png" width="30px" height= "30px">&ensp;&ensp;Home</a></li>
+            <li><a href="#"> <img src="green-button-icon-png-13.png" width="30px" height= "30px">&ensp;&ensp;Wellness</a></li>
+            <li><a href="#"> <img src="green-button-icon-png-13.png" width="30px" height= "30px">&ensp;&ensp;Consulting</a></li>
+            <li><a href="#"> <img src="green-button-icon-png-13.png" width="30px" height= "30px">&ensp;&ensp;Automotive</a></li>
+            <li><a href="#"> <img src="green-button-icon-png-13.png" width="30px" height= "30px">&ensp;&ensp;Events</a></li>
+            <li><a href="#"> <img src="green-button-icon-png-13.png" width="30px" height= "30px">&ensp;&ensp;Tech</a></li>
+            <li><a href="#"> <img src="green-button-icon-png-13.png" width="30px" height= "30px">&ensp;&ensp;Pets</a></li>
+            <li><a href="#"> <img src="green-button-icon-png-13.png" width="30px" height= "30px">&ensp;&ensp;Education</a></li>
+            </ul>
+            
+            </div>
+        
+        </div>
+        
+<!--Search Results-->
+    <div class="floatleft">            
+        
+        <div id="result1">
+            
+            <div class="image" id="img1"></div>
+            
+            <p id="title1" style="margin-bottom: 0; font-weight:800; padding-left: 15px; overflow: hidden"></p>
+            <p id="name1" style="padding-left:15px; color:#666;  overflow: hidden"></p>
+            <p id="location1" style="padding-left:15px; overflow: hidden"></p>
+            
+            <span style="font-size: 25px; float: left; cursor: default; color: rgb(255, 180, 0); overflow: hidden">
+            <span class="fa fa-star"  style="margin-left:15px;"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            </span>            
+            
+            <button class="btn btn-primary <btn-sm></btn-sm>" style="padding:5px 10px 5px 10px; float:right; margin-bottom:20px; margin-right:20px">View Profile</button>
+            
+        </div>
+        
+        <div id="result2">
+            
+            <div class="image" id="img2"></div>
+            
+           
+            <p id="title2" style="margin-bottom: 0; font-weight:800; font-family: arial; padding-left:15px; overflow: hidden"></p>
+            <p id="name2" style="padding-left:15px; color:#666; overflow: hidden"></p>
+            <p id="location2" style="padding-left:15px; overflow: hidden"></p>
+            
+            <span style="font-size: 25px; float: left; cursor: default; color: rgb(255, 180, 0); overflow: hidden">
+            <span class="fa fa-star"  style="margin-left:15px;"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            </span>
+            
+            <button class="btn btn-primary <btn-sm></btn-sm>" style="padding:5px 10px 5px 10px;float:right; margin-bottom:15px; margin-right:15px">View Profile</button>
+            
+        </div>    <!--results2 ends-->
+        
+    </div>    <!--Floatleft ends-->
+
+</div>    <!--Wrap ends-->
+
+</body>
+</html>
+
+<!--Javascript Code-->
+<script>
+        
+        //Directly included JSON data provided in the script
+        var obj = JSON.parse('{"url":"alex","name":"Alex Matarasso","score": 0,"views":[{"time": "2018-06-02T22:15:45+00:00","lname": "John","fname": "Abarham"},{"time": "2018-06-03T00:00:48+00:00","lname":"Coffey","fname": "Jeremy"},{"time": "2018-06-10T22:07:31+00:00","lname": "Walden","fname": "Mark"},{"time":"2018-06-11T23:30:40+00:00","lname": "Doraisamy","fname": "Aravindan","id": "5b11cf0095dc466cf99dcb7c"}],"averageRating": 5,"totalReviews": 1,"title": "Freelancer","profile_picture": "https://media.creativemornings.com/uploads/user/avatar/49419/Bechtel_Profile_Square.jpg","address":[{"city": "Sunnyvale","state": "California","zip_code": "94085","country": "USA"}],"reviews":[{"title": "Thanks for Signing Up!","rating": 5,"dateCreated": "2018-06-02T22:16:10.000Z"}]}')
+        
+        var obj1 = JSON.parse('{"url":"kyle","name":"Kyle","score":0,"views":[{"time":"2018-06-02T22:15:45+00:00","lname":"Kyle","fname":"Alex"},{"time":"2018-06-10T22:07:31+00:00","lname":"Walden","fname":"Mark"}],"averageRating":3.5,"totalReviews":2,"title":"Freelancer","profile_picture":"https://media.creativemornings.com/uploads/user/avatar/89900/Profile_picture_square.jpg","address":[{"city": "Santa Clara","state": "California","zip_code": "94085","country": "USA"}],"reviews":[{"title":"Thanks for Signing Up!!","rating":5,"dateCreated":"2018-06-02T22:16:10.000Z"}]}')
+        
+        //Adding Images to Results based on URL in JSON script
+        var im = new Image();
+        im.src = obj.profile_picture;
+        im.setAttribute("class", "image");
+        im.setAttribute("alt", "effy");
+        document.getElementById("img1").appendChild(im);
+        
+        var im1 = new Image();
+        im1.src = obj1.profile_picture;
+        im1.setAttribute("class", "image");
+        im1.setAttribute("alt", "effy");
+        document.getElementById("img2").appendChild(im1);  
+        
+        //Parsin data from JSON format into HTML format using Javascript
+        document.getElementById("title1").innerHTML = obj.title
+        document.getElementById("name1").innerHTML = obj.name
+        document.getElementById("location1").innerHTML = obj.address[0].city + "," + obj.address[0].state;
+        document.getElementById("title2").innerHTML = obj1.title
+        document.getElementById("name2").innerHTML = obj1.name
+        document.getElementById("location2").innerHTML = obj1.address[0].city + "," + obj1.address[0].state;
+        
+        //function f1 used to hide result 2 when sorted by Top Rated
+        function f1() 
+        {
+        var x = document.getElementById("result2");  
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }}
+        
+        //function f1 used to hide result 2 when sorted by Most Popular
+        function f2() 
+        {
+        var x = document.getElementById("result2");  
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }}
+
+</script>
+   
+         
+<!--
+   <script>
+    var title = {'<>':'div','html':'${title}'};
+    var imga = {'<>':'div','html':'${profil_picture}'};
+    var names = {'<>':'div','html':'${name}'};
+    var loc = {'<>':'div','html':'${address}'};
+//    <img id="img1" src="document.write( json2html.transform(d,profile_picture));" alt="">    
+    document.write( json2html.transform(d,title) );
+    document.write( json2html.transform(d,names) );
+    document.write( json2html.transform(d,loc) );
+    document.write( json2html.transform(d,imga));
+    
+        </script>
+</div>    
+-->  
